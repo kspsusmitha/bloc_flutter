@@ -1,4 +1,7 @@
 import 'package:bloc_examples/bloc_example/bloc.dart';
+import 'package:bloc_examples/bloc_get/home.dart';
+import 'package:bloc_examples/bloc_get/photo_bloc.dart';
+import 'package:bloc_examples/bloc_get/photo_event.dart';
 import 'package:bloc_examples/bloc_simple/home.dart';
 
 import 'package:bloc_examples/bloc_simple/text_bloc.dart';
@@ -25,11 +28,12 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
      providers: [
       BlocProvider(create: (context)=>CounterBloc()),
-      BlocProvider(create: (context)=>TextBloc())
+      BlocProvider(create: (context)=>TextBloc()),
+      BlocProvider(create: (context)=>PhotoBloc()..add(GetPhotos()))
      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(),
+        home: PhotoHome(),
       ),
     );
   }
