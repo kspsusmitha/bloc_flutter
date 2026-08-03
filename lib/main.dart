@@ -9,6 +9,7 @@ import 'package:bloc_examples/bloc_simple/home.dart';
 import 'package:bloc_examples/bloc_simple/text_bloc.dart';
 import 'package:bloc_examples/cubit/counter_cubit.dart';
 import 'package:bloc_examples/cubit/home_page.dart';
+import 'package:bloc_examples/dio.post/diopost1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => PhotoBloc()..add(GetPhotos())),
         BlocProvider(create: (context) => Demobloc())
       ],
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: Demohome()),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage()),
     );
   }
 }
